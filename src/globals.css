@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=DM+Mono:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --deep-purple: #600080;
+  --black: #000000;
+  --mid-purple: #411078;
+  --light-purple: #8B5CF6;
+  --accent-glow: #A855F7;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Archivo', sans-serif;
+    scroll-behavior: smooth;
+  }
+}
+
+.font-mono {
+  font-family: 'DM Mono', monospace !important;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #A855F7 0%, #600080 50%, #411078 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #600080 0%, #411078 50%, #1a0a2e 100%);
+}
+
+.gradient-card {
+  background: linear-gradient(145deg, rgba(96, 0, 128, 0.08) 0%, rgba(65, 16, 120, 0.04) 100%);
+  border: 1px solid rgba(96, 0, 128, 0.12);
+}
+
+.gradient-card:hover {
+  background: linear-gradient(145deg, rgba(96, 0, 128, 0.14) 0%, rgba(65, 16, 120, 0.08) 100%);
+  border-color: rgba(96, 0, 128, 0.25);
+}
+
+.glow-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #600080, #A855F7, #600080, transparent);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out 2s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #411078;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #600080;
+}
