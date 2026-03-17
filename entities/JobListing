@@ -1,0 +1,79 @@
+{
+  "name": "JobListing",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Job title"
+    },
+    "company": {
+      "type": "string",
+      "description": "Hiring company name"
+    },
+    "location": {
+      "type": "string",
+      "description": "Job location"
+    },
+    "salary_min": {
+      "type": "number",
+      "description": "Minimum salary"
+    },
+    "salary_max": {
+      "type": "number",
+      "description": "Maximum salary"
+    },
+    "currency": {
+      "type": "string",
+      "enum": [
+        "GBP",
+        "USD",
+        "EUR"
+      ],
+      "default": "GBP"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "ai_ml",
+        "low_code",
+        "automation",
+        "integration"
+      ],
+      "description": "Job category"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "permanent",
+        "contract",
+        "freelance"
+      ],
+      "default": "permanent"
+    },
+    "description": {
+      "type": "string",
+      "description": "Job description"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Skill tags"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "remote": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "title",
+    "company",
+    "location",
+    "category"
+  ]
+}
