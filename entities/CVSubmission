@@ -1,0 +1,37 @@
+{
+  "name": "CVSubmission",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "Uploaded CV file URL"
+    },
+    "message": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "reviewed",
+        "contacted",
+        "archived"
+      ],
+      "default": "new"
+    }
+  },
+  "required": [
+    "full_name",
+    "email"
+  ]
+}
